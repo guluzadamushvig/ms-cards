@@ -1,0 +1,40 @@
+  databaseChangeLog:
+    - changeSet:
+        id: Create Cards table
+        author: Mushvig Guluzada
+        changes:
+          - createTable:
+              tableName: cards
+              columns:
+                - column:
+                    name: id
+                    type: bigint
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: last_transaction_amount
+                    type: numeric(16,2)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: cardholder
+                    type: text
+                - column:
+                    name: card_number
+                    type: bigint
+                - column:
+                    name: last_transaction_date
+                    type: timestamp
+                    defaultValue: now()
+                    constraints:
+                      nullable: false
+                - column:
+                    name: created_at
+                    type: timestamp
+                    defaultValue: now()
+                    constraints:
+                      nullable: false
+
+              remarks: Created cards table
