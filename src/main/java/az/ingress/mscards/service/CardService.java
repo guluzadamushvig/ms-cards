@@ -14,6 +14,8 @@ public class CardService {
 
     private final CardRepository cardRepository;
     public void saveCardTransaction(CardRequest cardRequest) {
+        log.info("ActionLog.saveCardTransaction.Started");
         cardRepository.save(CardMapper.CardRequestToCardEntity(cardRequest));
+        log.info("ActionLog.saveCardTransaction.Finished");
     }
 }
